@@ -1,8 +1,7 @@
 === spa ===
 
-Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
-
+Contributors: 
+Tags: 
 Requires at least: 4.0
 Tested up to: 4.5.3
 Stable tag: 1.0.0
