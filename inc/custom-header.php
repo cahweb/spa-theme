@@ -12,33 +12,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package cah
+ * @package spa
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses cah_header_style()
+ * @uses spa_header_style()
  */
-function cah_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'cah_custom_header_args', array(
+function spa_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'spa_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'cah_header_style',
+		'wp-head-callback'       => 'spa_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'cah_custom_header_setup' );
+add_action( 'after_setup_theme', 'spa_custom_header_setup' );
 
-if ( ! function_exists( 'cah_header_style' ) ) :
+if ( ! function_exists( 'spa_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
- * @see cah_custom_header_setup().
+ * @see spa_custom_header_setup().
  */
-function cah_header_style() {
+function spa_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	/*
