@@ -104,6 +104,7 @@ add_action( 'widgets_init', 'spa_widgets_init' );
 function spa_scripts() {
 	wp_enqueue_style( 'spa-style', get_stylesheet_uri() );
 
+
 	wp_enqueue_script( 'spa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'spa-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
