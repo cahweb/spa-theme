@@ -1,5 +1,5 @@
 .main-navigation {
-	clear: both;
+	// Top level container display flex to order logo, primary nav, and secondary nav
 	display: flex;
 	width: 100%;
 	text-transform: uppercase;
@@ -15,17 +15,18 @@
 
 	.menu-primary-navbar-container,
 	.menu-secondary-navbar-container {
-		box-sizing: border-box;
+		// Both navs also display flex to vertically align the uls
 		display: flex;
 		justify-content: center;
 		// This should be twice what the li padding is set to, to avioid overflow (flex doesn't have a box-sizing capability)
 		padding: 0 4%;
 	}
 
+	// Both menus and logo also get child flex attributes, to fit in the top level container
+	// This might not be the best way to do it, but it works cleanly so far.
 	.menu-primary-navbar-container {
 		flex: 2;
 		font-size: 1em;
-
 	}
 
 	.menu-secondary-navbar-container {
@@ -33,6 +34,7 @@
 		font-size: 0.8em;
 	}
 
+	// Display none on mobile, display flex on normal, to organize li tags
 	ul {
 		justify-content: center;
 		align-items: center;
