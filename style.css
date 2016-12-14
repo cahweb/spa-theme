@@ -360,6 +360,109 @@ th {
 }
 
 /*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+/* line 2, static/sass/modules/_accessibility.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+/* line 9, static/sass/modules/_accessibility.scss */
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+/* line 30, static/sass/modules/_accessibility.scss */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+/* line 1, static/sass/modules/_alignments.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 7, static/sass/modules/_alignments.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 13, static/sass/modules/_alignments.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 1, static/sass/modules/_clearings.scss */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 16, static/sass/modules/_clearings.scss */
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 2, static/sass/modules/_infinite-scroll.scss */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+/* line 8, static/sass/modules/_infinite-scroll.scss */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 /* line 1, static/sass/typography/_copy.scss */
@@ -836,36 +939,42 @@ a:hover, a:active {
 /* line 1, static/sass/navigation/_menus.scss */
 .main-navigation {
   display: flex;
+  flex-direction: column;
   width: 100%;
   text-transform: uppercase;
+  padding: 20px;
 }
-/* line 7, static/sass/navigation/_menus.scss */
+/* line 9, static/sass/navigation/_menus.scss */
 .main-navigation .menu-logo {
-  flex: 1;
-  padding: 0 4%;
+  display: flex;
 }
-/* line 11, static/sass/navigation/_menus.scss */
-.main-navigation .menu-logo img {
-  max-width: 100%;
+/* line 12, static/sass/navigation/_menus.scss */
+.main-navigation .menu-logo a {
+  flex-grow: 20;
+  flex-shrink: 0;
 }
-/* line 16, static/sass/navigation/_menus.scss */
+/* line 18, static/sass/navigation/_menus.scss */
 .main-navigation .menu-primary-navbar-container,
 .main-navigation .menu-secondary-navbar-container {
   display: flex;
+  flex-grow: 2;
+  flex-shrink: 2;
   justify-content: center;
   padding: 0 4%;
 }
-/* line 27, static/sass/navigation/_menus.scss */
+/* line 31, static/sass/navigation/_menus.scss */
 .main-navigation .menu-primary-navbar-container {
-  flex: 2;
+  flex-grow: 3;
+  flex-shrink: 3;
   font-size: 1em;
 }
-/* line 32, static/sass/navigation/_menus.scss */
+/* line 37, static/sass/navigation/_menus.scss */
 .main-navigation .menu-secondary-navbar-container {
-  flex: 1;
+  flex-grow: 2;
+  flex-shrink: 2;
   font-size: 0.8em;
 }
-/* line 38, static/sass/navigation/_menus.scss */
+/* line 44, static/sass/navigation/_menus.scss */
 .main-navigation ul {
   justify-content: center;
   align-items: center;
@@ -874,7 +983,7 @@ a:hover, a:active {
   margin: 0;
   padding-left: 0;
 }
-/* line 46, static/sass/navigation/_menus.scss */
+/* line 52, static/sass/navigation/_menus.scss */
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
@@ -883,71 +992,109 @@ a:hover, a:active {
   left: -999em;
   z-index: 99999;
 }
-/* line 54, static/sass/navigation/_menus.scss */
+/* line 60, static/sass/navigation/_menus.scss */
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
 }
-/* line 60, static/sass/navigation/_menus.scss */
+/* line 66, static/sass/navigation/_menus.scss */
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
-/* line 66, static/sass/navigation/_menus.scss */
+/* line 72, static/sass/navigation/_menus.scss */
 .main-navigation ul ul a {
   width: 200px;
 }
-/* line 79, static/sass/navigation/_menus.scss */
+/* line 85, static/sass/navigation/_menus.scss */
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
 }
-/* line 85, static/sass/navigation/_menus.scss */
+/* line 91, static/sass/navigation/_menus.scss */
 .main-navigation li {
   margin: 0 4%;
 }
-/* line 93, static/sass/navigation/_menus.scss */
+/* line 99, static/sass/navigation/_menus.scss */
 .main-navigation a {
   display: block;
   text-decoration: none;
 }
 
 /* Small menu. */
-/* line 106, static/sass/navigation/_menus.scss */
-.menu-toggle,
-.main-navigation.toggled ul {
+/* line 114, static/sass/navigation/_menus.scss */
+.main-navigation .menu-primary-navbar-container {
+  text-align: center;
+  display: none;
+}
+/* line 119, static/sass/navigation/_menus.scss */
+.main-navigation .menu-secondary-navbar-container {
+  text-align: center;
+  display: none;
+}
+
+/* line 127, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-primary-navbar-container,
+.main-navigation.toggled .menu-primary-navbar-container {
+  display: block;
+}
+/* line 130, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-primary-navbar-container ul,
+.main-navigation.toggled .menu-primary-navbar-container ul {
+  display: block;
+}
+/* line 135, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-secondary-navbar-container,
+.main-navigation.toggled .menu-secondary-navbar-container {
+  display: block;
+}
+/* line 138, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-secondary-navbar-container ul,
+.main-navigation.toggled .menu-secondary-navbar-container ul {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-  /* line 112, static/sass/navigation/_menus.scss */
+@media (min-width: 980px) {
+  /* line 145, static/sass/navigation/_menus.scss */
   .menu-toggle {
     display: none;
   }
 
-  /* line 115, static/sass/navigation/_menus.scss */
+  /* line 149, static/sass/navigation/_menus.scss */
+  .main-navigation {
+    flex-direction: row;
+  }
+  /* line 153, static/sass/navigation/_menus.scss */
+  .main-navigation .menu-primary-navbar-container {
+    display: flex;
+  }
+  /* line 157, static/sass/navigation/_menus.scss */
+  .main-navigation .menu-secondary-navbar-container {
+    display: flex;
+  }
+  /* line 161, static/sass/navigation/_menus.scss */
   .main-navigation ul {
     display: flex;
   }
-  /* line 118, static/sass/navigation/_menus.scss */
+  /* line 164, static/sass/navigation/_menus.scss */
   .main-navigation ul li {
     flex: none;
   }
 }
-/* line 128, static/sass/navigation/_menus.scss */
+/* line 175, static/sass/navigation/_menus.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
-/* line 133, static/sass/navigation/_menus.scss */
+/* line 180, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-/* line 138, static/sass/navigation/_menus.scss */
+/* line 185, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -986,36 +1133,42 @@ a:hover, a:active {
 /* line 1, static/sass/navigation/_menus.scss */
 .main-navigation {
   display: flex;
+  flex-direction: column;
   width: 100%;
   text-transform: uppercase;
+  padding: 20px;
 }
-/* line 7, static/sass/navigation/_menus.scss */
+/* line 9, static/sass/navigation/_menus.scss */
 .main-navigation .menu-logo {
-  flex: 1;
-  padding: 0 4%;
+  display: flex;
 }
-/* line 11, static/sass/navigation/_menus.scss */
-.main-navigation .menu-logo img {
-  max-width: 100%;
+/* line 12, static/sass/navigation/_menus.scss */
+.main-navigation .menu-logo a {
+  flex-grow: 20;
+  flex-shrink: 0;
 }
-/* line 16, static/sass/navigation/_menus.scss */
+/* line 18, static/sass/navigation/_menus.scss */
 .main-navigation .menu-primary-navbar-container,
 .main-navigation .menu-secondary-navbar-container {
   display: flex;
+  flex-grow: 2;
+  flex-shrink: 2;
   justify-content: center;
   padding: 0 4%;
 }
-/* line 27, static/sass/navigation/_menus.scss */
+/* line 31, static/sass/navigation/_menus.scss */
 .main-navigation .menu-primary-navbar-container {
-  flex: 2;
+  flex-grow: 3;
+  flex-shrink: 3;
   font-size: 1em;
 }
-/* line 32, static/sass/navigation/_menus.scss */
+/* line 37, static/sass/navigation/_menus.scss */
 .main-navigation .menu-secondary-navbar-container {
-  flex: 1;
+  flex-grow: 2;
+  flex-shrink: 2;
   font-size: 0.8em;
 }
-/* line 38, static/sass/navigation/_menus.scss */
+/* line 44, static/sass/navigation/_menus.scss */
 .main-navigation ul {
   justify-content: center;
   align-items: center;
@@ -1024,7 +1177,7 @@ a:hover, a:active {
   margin: 0;
   padding-left: 0;
 }
-/* line 46, static/sass/navigation/_menus.scss */
+/* line 52, static/sass/navigation/_menus.scss */
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
@@ -1033,180 +1186,115 @@ a:hover, a:active {
   left: -999em;
   z-index: 99999;
 }
-/* line 54, static/sass/navigation/_menus.scss */
+/* line 60, static/sass/navigation/_menus.scss */
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
 }
-/* line 60, static/sass/navigation/_menus.scss */
+/* line 66, static/sass/navigation/_menus.scss */
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
-/* line 66, static/sass/navigation/_menus.scss */
+/* line 72, static/sass/navigation/_menus.scss */
 .main-navigation ul ul a {
   width: 200px;
 }
-/* line 79, static/sass/navigation/_menus.scss */
+/* line 85, static/sass/navigation/_menus.scss */
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
 }
-/* line 85, static/sass/navigation/_menus.scss */
+/* line 91, static/sass/navigation/_menus.scss */
 .main-navigation li {
   margin: 0 4%;
 }
-/* line 93, static/sass/navigation/_menus.scss */
+/* line 99, static/sass/navigation/_menus.scss */
 .main-navigation a {
   display: block;
   text-decoration: none;
 }
 
 /* Small menu. */
-/* line 106, static/sass/navigation/_menus.scss */
-.menu-toggle,
-.main-navigation.toggled ul {
+/* line 114, static/sass/navigation/_menus.scss */
+.main-navigation .menu-primary-navbar-container {
+  text-align: center;
+  display: none;
+}
+/* line 119, static/sass/navigation/_menus.scss */
+.main-navigation .menu-secondary-navbar-container {
+  text-align: center;
+  display: none;
+}
+
+/* line 127, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-primary-navbar-container,
+.main-navigation.toggled .menu-primary-navbar-container {
+  display: block;
+}
+/* line 130, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-primary-navbar-container ul,
+.main-navigation.toggled .menu-primary-navbar-container ul {
+  display: block;
+}
+/* line 135, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-secondary-navbar-container,
+.main-navigation.toggled .menu-secondary-navbar-container {
+  display: block;
+}
+/* line 138, static/sass/navigation/_menus.scss */
+.menu-toggle .menu-secondary-navbar-container ul,
+.main-navigation.toggled .menu-secondary-navbar-container ul {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-  /* line 112, static/sass/navigation/_menus.scss */
+@media (min-width: 980px) {
+  /* line 145, static/sass/navigation/_menus.scss */
   .menu-toggle {
     display: none;
   }
 
-  /* line 115, static/sass/navigation/_menus.scss */
+  /* line 149, static/sass/navigation/_menus.scss */
+  .main-navigation {
+    flex-direction: row;
+  }
+  /* line 153, static/sass/navigation/_menus.scss */
+  .main-navigation .menu-primary-navbar-container {
+    display: flex;
+  }
+  /* line 157, static/sass/navigation/_menus.scss */
+  .main-navigation .menu-secondary-navbar-container {
+    display: flex;
+  }
+  /* line 161, static/sass/navigation/_menus.scss */
   .main-navigation ul {
     display: flex;
   }
-  /* line 118, static/sass/navigation/_menus.scss */
+  /* line 164, static/sass/navigation/_menus.scss */
   .main-navigation ul li {
     flex: none;
   }
 }
-/* line 128, static/sass/navigation/_menus.scss */
+/* line 175, static/sass/navigation/_menus.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
-/* line 133, static/sass/navigation/_menus.scss */
+/* line 180, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-/* line 138, static/sass/navigation/_menus.scss */
+/* line 185, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
   float: right;
   text-align: right;
   width: 50%;
-}
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-/* line 2, static/sass/modules/_accessibility.scss */
-.screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-/* line 9, static/sass/modules/_accessibility.scss */
-.screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  color: #21759b;
-  display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
-}
-
-/* Do not show the outline on the skip link target. */
-/* line 30, static/sass/modules/_accessibility.scss */
-#content[tabindex="-1"]:focus {
-  outline: 0;
-}
-
-/* line 1, static/sass/modules/_alignments.scss */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-}
-
-/* line 7, static/sass/modules/_alignments.scss */
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-}
-
-/* line 13, static/sass/modules/_alignments.scss */
-.aligncenter {
-  clear: both;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 1, static/sass/modules/_clearings.scss */
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  overflow: hidden;
-  *zoom: 1;
-}
-
-/* line 16, static/sass/modules/_clearings.scss */
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both;
-}
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-/* line 2, static/sass/modules/_infinite-scroll.scss */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
-  display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-/* line 8, static/sass/modules/_infinite-scroll.scss */
-.infinity-end.neverending .site-footer {
-  display: block;
 }
 
 /*--------------------------------------------------------------

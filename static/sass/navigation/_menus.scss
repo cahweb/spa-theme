@@ -1,15 +1,17 @@
 .main-navigation {
 	// Top level container display flex to order logo, primary nav, and secondary nav
 	display: flex;
+	flex-direction: column;
 	width: 100%;
 	text-transform: uppercase;
+	padding: 20px;
 
 	.menu-logo {
-		flex: 1;
-		padding: 0 4%;
+		display: flex;
 
-		img {
-			max-width: 100%;
+		a {
+			flex-grow: 20;
+			flex-shrink: 0;
 		}
 	}
 
@@ -17,6 +19,8 @@
 	.menu-secondary-navbar-container {
 		// Both navs also display flex to vertically align the uls
 		display: flex;
+		flex-grow: 2;
+		flex-shrink: 2;
 		justify-content: center;
 		// This should be twice what the li padding is set to, to avioid overflow (flex doesn't have a box-sizing capability)
 		padding: 0 4%;
@@ -25,12 +29,14 @@
 	// Both menus and logo also get child flex attributes, to fit in the top level container
 	// This might not be the best way to do it, but it works cleanly so far.
 	.menu-primary-navbar-container {
-		flex: 2;
+		flex-grow: 3;
+		flex-shrink: 3;
 		font-size: 1em;
 	}
 
 	.menu-secondary-navbar-container {
-		flex: 1;
+		flex-grow: 2;
+		flex-shrink: 2;
 		font-size: 0.8em;
 	}
 
@@ -103,20 +109,61 @@
 }
 
 /* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+.main-navigation {
+
+	.menu-primary-navbar-container {
+		text-align: center;
+		display: none;
+	}
+
+	.menu-secondary-navbar-container {
+		text-align: center;
+		display: none;
+	}
 }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle,
+.main-navigation.toggled {
+	.menu-primary-navbar-container {
+		display: block;
+
+		ul {
+			display: block;
+		}
+	}
+
+	.menu-secondary-navbar-container {
+		display: block;
+
+		ul {
+			display: block;
+		}
+	}
+}
+
+@include media(">=tablet"){
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
-		display: flex;
 
-		li {
-			flex: none;
+	.main-navigation {
+
+		flex-direction: row;
+
+		.menu-primary-navbar-container {
+			display: flex;
+		}
+
+		.menu-secondary-navbar-container {
+			display: flex;
+		}
+
+		ul {
+			display: flex;
+
+			li {
+				flex: none;
+			}
 		}
 	}
 }

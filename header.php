@@ -29,14 +29,20 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'spa' ); ?></button>
-			<div class="menu-logo">
-				<img src="<?php echo get_template_directory_uri() . '/static/img/navbar/logo.png' ?>">
+			<div class="menu-logo">	
+				<a href="<?=home_url();?>">
+					<div>
+						<h2>SCHOOL <i>of </i>PERFORMING ARTS</h2>
+					</div>
+				</a>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'spa' ); ?></button>
 			</div>
-			<?php 
-				wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
-				wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) );
-			?>
+			<div class="menus">
+				<?php 
+					wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+					wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) );
+				?>
+			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
