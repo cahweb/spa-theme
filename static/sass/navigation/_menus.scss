@@ -8,37 +8,14 @@
 
 	.menu-logo {
 		display: flex;
+		flex: 0;
 
 		a {
-			flex-grow: 20;
+			flex-grow: 1;
 			flex-shrink: 0;
 		}
 	}
 
-	.menu-primary-navbar-container,
-	.menu-secondary-navbar-container {
-		// Both navs also display flex to vertically align the uls
-		display: flex;
-		flex-grow: 2;
-		flex-shrink: 2;
-		justify-content: center;
-		// This should be twice what the li padding is set to, to avioid overflow (flex doesn't have a box-sizing capability)
-		padding: 0 4%;
-	}
-
-	// Both menus and logo also get child flex attributes, to fit in the top level container
-	// This might not be the best way to do it, but it works cleanly so far.
-	.menu-primary-navbar-container {
-		flex-grow: 3;
-		flex-shrink: 3;
-		font-size: 1em;
-	}
-
-	.menu-secondary-navbar-container {
-		flex-grow: 2;
-		flex-shrink: 2;
-		font-size: 0.8em;
-	}
 
 	// Display none on mobile, display flex on normal, to organize li tags
 	ul {
@@ -150,13 +127,20 @@
 
 		flex-direction: row;
 
+		.menu-logo {
+			flex: 2;
+		}
+
 		.menu-primary-navbar-container {
-			display: flex;
+			display: block;
+			flex: 3;
 		}
 
 		.menu-secondary-navbar-container {
-			display: flex;
+			display: block;
+			flex: 2;
 		}
+
 
 		ul {
 			display: flex;

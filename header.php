@@ -37,12 +37,10 @@
 				</a>
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'MENU', 'spa' ); ?></button>
 			</div>
-			<div class="menus">
-				<?php 
-					wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
-					wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) );
-				?>
-			</div>
+			<?php 
+				wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+				wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu' ) );
+			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
