@@ -687,6 +687,11 @@ figure {
   /* Extra wide images within figure tags don't overflow the content area. */
 }
 
+/* line 42, static/sass/elements/_elements.scss */
+a {
+  color: black;
+}
+
 /* line 1, static/sass/elements/_tables.scss */
 table {
   margin: 0 0 1.5em;
@@ -947,14 +952,15 @@ a:hover, a:active {
 /* line 9, static/sass/navigation/_menus.scss */
 .main-navigation .menu-logo {
   display: flex;
+  text-transform: none;
   flex: 0;
 }
-/* line 13, static/sass/navigation/_menus.scss */
+/* line 14, static/sass/navigation/_menus.scss */
 .main-navigation .menu-logo a {
   flex-grow: 1;
   flex-shrink: 0;
 }
-/* line 21, static/sass/navigation/_menus.scss */
+/* line 22, static/sass/navigation/_menus.scss */
 .main-navigation ul {
   justify-content: center;
   align-items: center;
@@ -963,7 +969,7 @@ a:hover, a:active {
   margin: 0;
   padding-left: 0;
 }
-/* line 29, static/sass/navigation/_menus.scss */
+/* line 30, static/sass/navigation/_menus.scss */
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
@@ -972,115 +978,113 @@ a:hover, a:active {
   left: -999em;
   z-index: 99999;
 }
-/* line 37, static/sass/navigation/_menus.scss */
+/* line 38, static/sass/navigation/_menus.scss */
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
 }
-/* line 43, static/sass/navigation/_menus.scss */
+/* line 44, static/sass/navigation/_menus.scss */
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
-/* line 49, static/sass/navigation/_menus.scss */
+/* line 50, static/sass/navigation/_menus.scss */
 .main-navigation ul ul a {
   width: 200px;
 }
-/* line 62, static/sass/navigation/_menus.scss */
+/* line 63, static/sass/navigation/_menus.scss */
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
 }
-/* line 68, static/sass/navigation/_menus.scss */
+/* line 69, static/sass/navigation/_menus.scss */
 .main-navigation li {
   margin: 0 4%;
 }
-/* line 76, static/sass/navigation/_menus.scss */
+/* line 77, static/sass/navigation/_menus.scss */
 .main-navigation a {
   display: block;
   text-decoration: none;
 }
 
 /* Small menu. */
-/* line 91, static/sass/navigation/_menus.scss */
+/* line 92, static/sass/navigation/_menus.scss */
 .main-navigation .menu-primary-navbar-container {
   text-align: center;
   display: none;
+  font-size: 1em;
 }
-/* line 96, static/sass/navigation/_menus.scss */
+/* line 98, static/sass/navigation/_menus.scss */
 .main-navigation .menu-secondary-navbar-container {
   text-align: center;
   display: none;
+  font-size: .8em;
 }
 
-/* line 104, static/sass/navigation/_menus.scss */
+/* line 107, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-primary-navbar-container,
 .main-navigation.toggled .menu-primary-navbar-container {
   display: block;
 }
-/* line 107, static/sass/navigation/_menus.scss */
+/* line 110, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-primary-navbar-container ul,
 .main-navigation.toggled .menu-primary-navbar-container ul {
   display: block;
 }
-/* line 112, static/sass/navigation/_menus.scss */
+/* line 115, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-secondary-navbar-container,
 .main-navigation.toggled .menu-secondary-navbar-container {
   display: block;
 }
-/* line 115, static/sass/navigation/_menus.scss */
+/* line 118, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-secondary-navbar-container ul,
 .main-navigation.toggled .menu-secondary-navbar-container ul {
   display: block;
 }
 
 @media (min-width: 980px) {
-  /* line 122, static/sass/navigation/_menus.scss */
+  /* line 125, static/sass/navigation/_menus.scss */
   .menu-toggle {
     display: none;
   }
 
-  /* line 126, static/sass/navigation/_menus.scss */
+  /* line 129, static/sass/navigation/_menus.scss */
   .main-navigation {
     flex-direction: row;
   }
-  /* line 130, static/sass/navigation/_menus.scss */
+  /* line 133, static/sass/navigation/_menus.scss */
   .main-navigation .menu-logo {
     flex: 2;
   }
-  /* line 134, static/sass/navigation/_menus.scss */
+  /* line 137, static/sass/navigation/_menus.scss */
   .main-navigation .menu-primary-navbar-container {
     display: block;
     flex: 3;
   }
-  /* line 139, static/sass/navigation/_menus.scss */
+  /* line 142, static/sass/navigation/_menus.scss */
   .main-navigation .menu-secondary-navbar-container {
     display: block;
     flex: 2;
   }
-  /* line 145, static/sass/navigation/_menus.scss */
+  /* line 147, static/sass/navigation/_menus.scss */
   .main-navigation ul {
     display: flex;
   }
-  /* line 148, static/sass/navigation/_menus.scss */
-  .main-navigation ul li {
-    flex: none;
-  }
 }
-/* line 159, static/sass/navigation/_menus.scss */
+/* line 158, static/sass/navigation/_menus.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
-/* line 164, static/sass/navigation/_menus.scss */
+/* line 163, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-/* line 169, static/sass/navigation/_menus.scss */
+/* line 168, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -1127,14 +1131,15 @@ a:hover, a:active {
 /* line 9, static/sass/navigation/_menus.scss */
 .main-navigation .menu-logo {
   display: flex;
+  text-transform: none;
   flex: 0;
 }
-/* line 13, static/sass/navigation/_menus.scss */
+/* line 14, static/sass/navigation/_menus.scss */
 .main-navigation .menu-logo a {
   flex-grow: 1;
   flex-shrink: 0;
 }
-/* line 21, static/sass/navigation/_menus.scss */
+/* line 22, static/sass/navigation/_menus.scss */
 .main-navigation ul {
   justify-content: center;
   align-items: center;
@@ -1143,7 +1148,7 @@ a:hover, a:active {
   margin: 0;
   padding-left: 0;
 }
-/* line 29, static/sass/navigation/_menus.scss */
+/* line 30, static/sass/navigation/_menus.scss */
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
@@ -1152,115 +1157,113 @@ a:hover, a:active {
   left: -999em;
   z-index: 99999;
 }
-/* line 37, static/sass/navigation/_menus.scss */
+/* line 38, static/sass/navigation/_menus.scss */
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
 }
-/* line 43, static/sass/navigation/_menus.scss */
+/* line 44, static/sass/navigation/_menus.scss */
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   left: 100%;
 }
-/* line 49, static/sass/navigation/_menus.scss */
+/* line 50, static/sass/navigation/_menus.scss */
 .main-navigation ul ul a {
   width: 200px;
 }
-/* line 62, static/sass/navigation/_menus.scss */
+/* line 63, static/sass/navigation/_menus.scss */
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
 }
-/* line 68, static/sass/navigation/_menus.scss */
+/* line 69, static/sass/navigation/_menus.scss */
 .main-navigation li {
   margin: 0 4%;
 }
-/* line 76, static/sass/navigation/_menus.scss */
+/* line 77, static/sass/navigation/_menus.scss */
 .main-navigation a {
   display: block;
   text-decoration: none;
 }
 
 /* Small menu. */
-/* line 91, static/sass/navigation/_menus.scss */
+/* line 92, static/sass/navigation/_menus.scss */
 .main-navigation .menu-primary-navbar-container {
   text-align: center;
   display: none;
+  font-size: 1em;
 }
-/* line 96, static/sass/navigation/_menus.scss */
+/* line 98, static/sass/navigation/_menus.scss */
 .main-navigation .menu-secondary-navbar-container {
   text-align: center;
   display: none;
+  font-size: .8em;
 }
 
-/* line 104, static/sass/navigation/_menus.scss */
+/* line 107, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-primary-navbar-container,
 .main-navigation.toggled .menu-primary-navbar-container {
   display: block;
 }
-/* line 107, static/sass/navigation/_menus.scss */
+/* line 110, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-primary-navbar-container ul,
 .main-navigation.toggled .menu-primary-navbar-container ul {
   display: block;
 }
-/* line 112, static/sass/navigation/_menus.scss */
+/* line 115, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-secondary-navbar-container,
 .main-navigation.toggled .menu-secondary-navbar-container {
   display: block;
 }
-/* line 115, static/sass/navigation/_menus.scss */
+/* line 118, static/sass/navigation/_menus.scss */
 .menu-toggle .menu-secondary-navbar-container ul,
 .main-navigation.toggled .menu-secondary-navbar-container ul {
   display: block;
 }
 
 @media (min-width: 980px) {
-  /* line 122, static/sass/navigation/_menus.scss */
+  /* line 125, static/sass/navigation/_menus.scss */
   .menu-toggle {
     display: none;
   }
 
-  /* line 126, static/sass/navigation/_menus.scss */
+  /* line 129, static/sass/navigation/_menus.scss */
   .main-navigation {
     flex-direction: row;
   }
-  /* line 130, static/sass/navigation/_menus.scss */
+  /* line 133, static/sass/navigation/_menus.scss */
   .main-navigation .menu-logo {
     flex: 2;
   }
-  /* line 134, static/sass/navigation/_menus.scss */
+  /* line 137, static/sass/navigation/_menus.scss */
   .main-navigation .menu-primary-navbar-container {
     display: block;
     flex: 3;
   }
-  /* line 139, static/sass/navigation/_menus.scss */
+  /* line 142, static/sass/navigation/_menus.scss */
   .main-navigation .menu-secondary-navbar-container {
     display: block;
     flex: 2;
   }
-  /* line 145, static/sass/navigation/_menus.scss */
+  /* line 147, static/sass/navigation/_menus.scss */
   .main-navigation ul {
     display: flex;
   }
-  /* line 148, static/sass/navigation/_menus.scss */
-  .main-navigation ul li {
-    flex: none;
-  }
 }
-/* line 159, static/sass/navigation/_menus.scss */
+/* line 158, static/sass/navigation/_menus.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
-/* line 164, static/sass/navigation/_menus.scss */
+/* line 163, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
   width: 50%;
 }
-/* line 169, static/sass/navigation/_menus.scss */
+/* line 168, static/sass/navigation/_menus.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
